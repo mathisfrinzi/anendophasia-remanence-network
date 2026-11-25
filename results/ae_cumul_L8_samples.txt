@@ -1,0 +1,31 @@
+orig : horts ar
+recon: horts ar
+              
+
+orig : to the h
+recon: to the h
+              
+
+orig : old name
+recon: old name
+              
+
+orig :  stars s
+recon:  stars s
+              
+
+orig : a bit of
+recon: a bit of
+              
+
+orig : loud boo
+recon: loud boo
+              
+
+orig : cepted t
+recon: cepted t
+              
+
+orig : ee in hi
+recon: ee in hi
+              
