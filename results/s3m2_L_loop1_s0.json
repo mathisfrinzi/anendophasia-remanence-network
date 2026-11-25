@@ -1,0 +1,33 @@
+{
+ "model": "L_loop1",
+ "seed": 0,
+ "steps": 3000,
+ "n_params": 153556,
+ "seconds": 750,
+ "final": {
+  "12": {
+   "s3": 1.0,
+   "recall": 1.0,
+   "recall_q1": 1.0,
+   "recall_q2": 1.0
+  },
+  "24": {
+   "s3": 1.0,
+   "recall": 1.0,
+   "recall_q1": 1.0,
+   "recall_q2": 1.0
+  },
+  "48": {
+   "s3": 1.0,
+   "recall": 1.0,
+   "recall_q1": 1.0,
+   "recall_q2": 1.0
+  },
+  "96": {
+   "s3": 0.9998779296875,
+   "recall": 0.984375,
+   "recall_q1": 1.0,
+   "recall_q2": 0.9652174115180969
+  }
+ }
+}

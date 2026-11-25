@@ -1,0 +1,41 @@
+{
+ "task": "S2",
+ "model": "L_loop",
+ "seed": 0,
+ "steps": 2000,
+ "n_params": 894406,
+ "seconds": 569.2,
+ "chance": 0.5,
+ "final": {
+  "acc_0_24": 1.0,
+  "acc_24_48": 1.0,
+  "acc_48_96": 1.0,
+  "acc_96_256": 1.0
+ },
+ "curve": [
+  {
+   "step": 500,
+   "loss": 3.865149210469099e-06,
+   "acc_train_len": 1.0,
+   "supervised_len": 16
+  },
+  {
+   "step": 1000,
+   "loss": 0.0038772665429860353,
+   "acc_train_len": 1.0,
+   "supervised_len": 24
+  },
+  {
+   "step": 1500,
+   "loss": 1.1253479259565324e-09,
+   "acc_train_len": 1.0,
+   "supervised_len": 24
+  },
+  {
+   "step": 2000,
+   "loss": 0.0,
+   "acc_train_len": 1.0,
+   "supervised_len": 24
+  }
+ ]
+}

@@ -1,0 +1,41 @@
+{
+ "task": "S2",
+ "model": "V_lam0",
+ "seed": 1,
+ "steps": 2000,
+ "n_params": 862644,
+ "seconds": 88.3,
+ "chance": 0.5,
+ "final": {
+  "acc_0_24": 1.0,
+  "acc_24_48": 1.0,
+  "acc_48_96": 0.9997965693473816,
+  "acc_96_256": 0.7124999761581421
+ },
+ "curve": [
+  {
+   "step": 500,
+   "loss": 0.21399067342281342,
+   "acc_train_len": 0.8834635615348816,
+   "supervised_len": 16
+  },
+  {
+   "step": 1000,
+   "loss": 1.6830223103170283e-05,
+   "acc_train_len": 1.0,
+   "supervised_len": 24
+  },
+  {
+   "step": 1500,
+   "loss": 5.058073384134332e-06,
+   "acc_train_len": 1.0,
+   "supervised_len": 24
+  },
+  {
+   "step": 2000,
+   "loss": 0.0,
+   "acc_train_len": 1.0,
+   "supervised_len": 24
+  }
+ ]
+}

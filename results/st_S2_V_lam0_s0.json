@@ -1,0 +1,41 @@
+{
+ "task": "S2",
+ "model": "V_lam0",
+ "seed": 0,
+ "steps": 2000,
+ "n_params": 862644,
+ "seconds": 86.9,
+ "chance": 0.5,
+ "final": {
+  "acc_0_24": 1.0,
+  "acc_24_48": 1.0,
+  "acc_48_96": 0.9993489384651184,
+  "acc_96_256": 0.956103503704071
+ },
+ "curve": [
+  {
+   "step": 500,
+   "loss": 0.3373422622680664,
+   "acc_train_len": 0.8854166865348816,
+   "supervised_len": 16
+  },
+  {
+   "step": 1000,
+   "loss": 0.05558251217007637,
+   "acc_train_len": 1.0,
+   "supervised_len": 24
+  },
+  {
+   "step": 1500,
+   "loss": 0.0,
+   "acc_train_len": 1.0,
+   "supervised_len": 24
+  },
+  {
+   "step": 2000,
+   "loss": 0.0,
+   "acc_train_len": 1.0,
+   "supervised_len": 24
+  }
+ ]
+}
