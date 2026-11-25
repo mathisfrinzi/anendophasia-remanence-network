@@ -1,0 +1,21 @@
+'Lily' | ' was' | ' and' 14% / '.' 12% / ' was' 10% | 3.4 | ' was' 20% / ' said' 6% / ' and' 6% | 2.3
+' was' | ' hungry' | ' very' 23% / ' so' 11% / ' happy' 7% | 7.9 | ' very' 19% / ' so' 7% / ' happy' 6% | 10.5
+' hungry' | '.' | '.' 60% / ' and' 35% / ',' 3% | 0.7 | '.' 61% / ' and' 17% / ',' 10% | 0.7
+'.' | ' She' | ' She' 73% / ' They' 8% / '\n' 6% | 0.5 | ' She' 65% / ' Her' 5% / ' They' 5% | 0.6
+' She' | ' went' | ' wanted' 27% / ' saw' 9% / ' said' 5% | 5.5 | ' wanted' 40% / ' said' 6% / ' saw' 4% | 4.6
+' went' | ' to' | ' to' 87% / ' back' 6% / ' inside' 3% | 0.2 | ' to' 71% / ' outside' 7% / ' back' 5% | 0.5
+' to' | ' the' | ' the' 55% / ' her' 20% / ' find' 4% | 0.9 | ' the' 59% / ' her' 31% / ' bed' 1% | 0.8
+' the' | ' kitchen' | ' kitchen' 56% / ' table' 2% / ' fridge' 2% | 0.8 | ' park' 19% / ' store' 19% / ' kitchen' 12% | 3.0
+' kitchen' | ' and' | ' and' 73% / ' to' 9% / '.' 8% | 0.5 | ' and' 60% / ' to' 20% / '.' 6% | 0.7
+' and' | ' ate' | ' saw' 26% / ' found' 13% / ' got' 7% | 7.0 | ' saw' 10% / ' asked' 10% / ' got' 8% | 4.7
+' ate' | ' a' | ' some' 39% / ' the' 26% / ' her' 18% | 3.9 | ' some' 35% / ' the' 16% / ' her' 15% | 3.8
+' a' | ' red' | ' big' 22% / ' lot' 10% / ' cookie' 9% | 9.6 | ' cookie' 12% / ' snack' 12% / ' big' 10% | 11.9
+' red' | ' apple' | ' apple' 13% / ' cake' 6% / ' snack' 4% | 2.9 | ' apple' 19% / ' cake' 9% / ' sandwich' 4% | 2.4
+' apple' | '.' | '.' 93% / ' and' 1% / ',' 1% | 0.1 | '.' 89% / ' and' 2% / ' for' 1% | 0.2
+'.' | ' Then' | ' She' 74% / ' But' 6% / ' It' 5% | 6.8 | ' She' 56% / ' The' 7% / ' Lily' 6% | 5.8
+' Then' | ' she' | ' she' 73% / ',' 21% / ' they' 1% | 0.4 | ' she' 84% / ',' 10% / ' they' 1% | 0.3
+' she' | ' ate' | ' saw' 26% / ' took' 18% / ' went' 6% | 5.9 | ' saw' 23% / ' ate' 9% / ' went' 7% | 3.5
+' ate' | ' a' | ' it' 34% / ' the' 22% / ' some' 16% | 4.1 | ' the' 24% / ' it' 23% / ' her' 16% | 4.1
+' a' | ' big' | ' big' 20% / ' bite' 12% / ' banana' 7% | 2.3 | ' big' 19% / ' bite' 8% / ' cookie' 5% | 2.4
+' big' | ' rock' | ' bite' 24% / ' bowl' 8% / ',' 8% | 8.8 | ' apple' 19% / ' bite' 17% / ',' 11% | 13.7
+' rock' | '.' | ' and' 80% / '.' 12% / ' with' 2% | 3.1 | ' and' 81% / '.' 10% / ',' 2% | 3.3
