@@ -1,0 +1,18 @@
+{
+ "tag": "an_image",
+ "arm": "image",
+ "chunk": 16,
+ "ablation": {
+  "intact_char_acc": 1.0,
+  "max_share_per_position": 0.3706439435482025,
+  "uniform_blocks": 0.0625,
+  "max_share_per_block": 0.394345223903656,
+  "uniform_positions": 0.0625,
+  "mean_total_damage_per_block": 0.0087890625,
+  "specificite": {
+   "mi": 0.9793047904968262,
+   "mi_permutation_mean": 1.2251709347963333,
+   "p": 1.0
+  }
+ }
+}

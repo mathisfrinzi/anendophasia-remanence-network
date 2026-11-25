@@ -1,0 +1,48 @@
+{
+ "tag": "an_base",
+ "arm": "cumul",
+ "chunk": 16,
+ "ablation": {
+  "intact_char_acc": 0.9979248046875,
+  "max_share_per_position": 0.21998170018196106,
+  "uniform_blocks": 0.0625,
+  "max_share_per_block": 0.18750078976154327,
+  "uniform_positions": 0.0625,
+  "mean_total_damage_per_block": 0.1104736328125,
+  "specificite": {
+   "mi": 0.30119478702545166,
+   "mi_permutation_mean": 0.37094718232750895,
+   "p": 1.0
+  }
+ },
+ "ecriture": {
+  "par_classe": {
+   "r2": 0.028100290297182633,
+   "r2_permutation_mean": 0.011344557569668026,
+   "p": 0.0
+  },
+  "par_caractere": {
+   "r2": 0.09519535949294188,
+   "r2_permutation_mean": 0.007465601584707425,
+   "p": 0.0
+  },
+  "par_instant": {
+   "r2": 0.17462664745772605,
+   "r2_permutation_mean": 0.0018349161231069608,
+   "p": 0.0
+  }
+ },
+ "derive": {
+  "spearman_com_x_vs_t": -0.5558823529411765,
+  "spearman_com_y_vs_t": 0.5617647058823529,
+  "com_x_debut_fin": [
+   3.5870384147316225,
+   3.409684326539901
+  ],
+  "com_y_debut_fin": [
+   3.252656728667642,
+   3.467829782758722
+  ],
+  "deplacement_px": 0.2788438914611538
+ }
+}

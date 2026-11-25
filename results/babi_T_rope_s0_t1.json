@@ -1,0 +1,22 @@
+{
+ "model": "T_rope",
+ "seed": 0,
+ "steps": 1000,
+ "n_params": 105472,
+ "seconds": 40,
+ "test": {
+  "qa1": 0.514
+ },
+ "curve": [
+  {
+   "step": 500,
+   "loss": 1.1015,
+   "acc_qa1": 0.495
+  },
+  {
+   "step": 1000,
+   "loss": 1.0583,
+   "acc_qa1": 0.565
+  }
+ ]
+}

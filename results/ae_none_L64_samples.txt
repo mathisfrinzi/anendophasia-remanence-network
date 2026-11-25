@@ -1,0 +1,31 @@
+orig : ear pants. It is cold outside. You will get sick. Shorts are for
+recon: ear pants. It is cold outside. You will get sick. Shorts are for
+                                                                      
+
+orig : ack. Then they went back together to the house and had a lot of 
+recon: ack. Then they went back together to the house and had a lot of 
+                                                                      
+
+orig :  there was a 3 year old named Jane. She loved to watch her favou
+recon:  there was a ! year old named Jane. She loved to watch her favou
+                   ^                                                  
+
+orig : ight was over, and the stars shone brightly in the sky. Every mo
+recon: ight was over, and the stars shone brightly in the sky. Every mo
+                                                                      
+
+orig : fter a bit of searching, she found a little boy hiding behind a 
+recon: fter a bit of searching, she found a little boy hiding behind a 
+                                                                      
+
+orig : laughing.~~Suddenly, they heard a loud boom and saw a bright fla
+recon: laughing.~~Suddenly, they heard a loud boom and saw a bright fla
+                                                                      
+
+orig : and excited, and gladly accepted the bee's offer. With her help,
+recon: and excited, and gladly accepted the bee's offer. With her help,
+                                                                      
+
+orig : ryone." So, he decided to hang the cauliflower on a tree in his 
+recon: ryone." So, he decided to hang the cauliflower on a tree in his 
+                                                                      

@@ -1,0 +1,31 @@
+orig : . You will get sick. Shorts are 
+recon: . You will get sick. Shorts are 
+                                      
+
+orig :  back together to the house and 
+recon:  back together to the house and 
+                                      
+
+orig : a 3 year old named Jane. She lov
+recon: o 3 year old named Jane. She lov
+      ^                               
+
+orig : r, and the stars shone brightly 
+recon: r, and the stars shone brightly 
+                                      
+
+orig : r a bit of searching, she found 
+recon: r a but of searching, she found 
+           ^                          
+
+orig : , they heard a loud boom and saw
+recon: , they heard a loud boom and saw
+                                      
+
+orig : d gladly accepted the bee's offe
+recon: d gaadly accected the bee's offe
+         ^         ^                  
+
+orig : the cauliflower on a tree in his
+recon: the cauiiffower on a tree in his
+             ^  ^                     

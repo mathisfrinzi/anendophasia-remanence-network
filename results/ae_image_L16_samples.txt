@@ -1,0 +1,31 @@
+orig :  sick. Shorts ar
+recon:  sick. Shorts ar
+                      
+
+orig : ther to the hous
+recon: ther to the hous
+                      
+
+orig : ar old named Jan
+recon: ar old named Jan
+                      
+
+orig : the stars shone 
+recon: the stars shone 
+                      
+
+orig :  a bit of search
+recon:  a bit of search
+                      
+
+orig : rd a loud boom a
+recon: rd a loud boom a
+                      
+
+orig : y accepted the b
+recon: y accepted the b
+                      
+
+orig :  on a tree in hi
+recon:  on a tree in hi
+                      

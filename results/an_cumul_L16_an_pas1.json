@@ -1,0 +1,48 @@
+{
+ "tag": "an_pas1",
+ "arm": "cumul",
+ "chunk": 16,
+ "ablation": {
+  "intact_char_acc": 0.9898681640625,
+  "max_share_per_position": 0.16003024578094482,
+  "uniform_blocks": 0.0625,
+  "max_share_per_block": 0.14372417330741882,
+  "uniform_positions": 0.0625,
+  "mean_total_damage_per_block": 0.287353515625,
+  "specificite": {
+   "mi": 0.14546045660972595,
+   "mi_permutation_mean": 0.22349545024335385,
+   "p": 1.0
+  }
+ },
+ "ecriture": {
+  "par_classe": {
+   "r2": 0.02912568076616913,
+   "r2_permutation_mean": 0.012086869113362684,
+   "p": 0.005
+  },
+  "par_caractere": {
+   "r2": 0.09721291600012402,
+   "r2_permutation_mean": 0.007433762956917725,
+   "p": 0.0
+  },
+  "par_instant": {
+   "r2": 0.061939099385823586,
+   "r2_permutation_mean": 0.0018479021823808392,
+   "p": 0.0
+  }
+ },
+ "derive": {
+  "spearman_com_x_vs_t": 0.8470588235294119,
+  "spearman_com_y_vs_t": 0.6088235294117647,
+  "com_x_debut_fin": [
+   3.4271428336082415,
+   3.5981674678972104
+  ],
+  "com_y_debut_fin": [
+   3.4344207321348326,
+   3.617141559601889
+  ],
+  "deplacement_px": 0.2502725041308401
+ }
+}
