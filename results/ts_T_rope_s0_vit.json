@@ -1,0 +1,23 @@
+{
+ "dataset": "tinystories",
+ "tag": "_vit",
+ "eval_len": 256,
+ "model": "T_rope",
+ "seed": 0,
+ "steps": 600,
+ "batch": 16,
+ "window": 128,
+ "device": "xpu",
+ "n_params": 624384,
+ "n_train": 624384,
+ "backbone": "vit_small_patch16_224",
+ "pre_mode": "ln",
+ "seconds": 19,
+ "bpc": {
+  "0-16": 1.635470143942197,
+  "16-32": 1.536494940063456,
+  "32-64": 1.5776219981209219,
+  "64-128": 1.5442694933002634,
+  "128-256": 1.5733592620792898
+ }
+}

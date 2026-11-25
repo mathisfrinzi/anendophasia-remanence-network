@@ -1,0 +1,89 @@
+{
+ "task": "S3L",
+ "model": "T_rope",
+ "seed": 3,
+ "steps": 12000,
+ "n_params": 794880,
+ "seconds": 162.6,
+ "chance": 0.16666666666666666,
+ "final": {
+  "acc_0_24": 0.9749348759651184,
+  "acc_24_48": 0.230712890625,
+  "acc_48_96": 0.1635335236787796,
+  "acc_96_256": 0.16655273735523224
+ },
+ "curve": [
+  {
+   "step": 1000,
+   "loss": 0.32260316610336304,
+   "acc_train_len": 0.4200032651424408,
+   "supervised_len": 8
+  },
+  {
+   "step": 2000,
+   "loss": 0.19897766411304474,
+   "acc_train_len": 0.5652669072151184,
+   "supervised_len": 12
+  },
+  {
+   "step": 3000,
+   "loss": 0.18336564302444458,
+   "acc_train_len": 0.695556640625,
+   "supervised_len": 16
+  },
+  {
+   "step": 4000,
+   "loss": 0.24173125624656677,
+   "acc_train_len": 0.7757975459098816,
+   "supervised_len": 20
+  },
+  {
+   "step": 5000,
+   "loss": 0.30908384919166565,
+   "acc_train_len": 0.8504231572151184,
+   "supervised_len": 24
+  },
+  {
+   "step": 6000,
+   "loss": 0.31089869141578674,
+   "acc_train_len": 0.8726399540901184,
+   "supervised_len": 24
+  },
+  {
+   "step": 7000,
+   "loss": 0.23048828542232513,
+   "acc_train_len": 0.8935546875,
+   "supervised_len": 24
+  },
+  {
+   "step": 8000,
+   "loss": 0.16371238231658936,
+   "acc_train_len": 0.9146321415901184,
+   "supervised_len": 24
+  },
+  {
+   "step": 9000,
+   "loss": 0.12829932570457458,
+   "acc_train_len": 0.937744140625,
+   "supervised_len": 24
+  },
+  {
+   "step": 10000,
+   "loss": 0.10530950874090195,
+   "acc_train_len": 0.957275390625,
+   "supervised_len": 24
+  },
+  {
+   "step": 11000,
+   "loss": 0.09383644908666611,
+   "acc_train_len": 0.967529296875,
+   "supervised_len": 24
+  },
+  {
+   "step": 12000,
+   "loss": 0.07815978676080704,
+   "acc_train_len": 0.9700520634651184,
+   "supervised_len": 24
+  }
+ ]
+}

@@ -1,0 +1,113 @@
+{
+ "task": "S5",
+ "model": "D_blob_e1",
+ "seed": 2,
+ "steps": 8000,
+ "n_params": 859340,
+ "seconds": 303.8,
+ "chance": 0.008333333333333333,
+ "final": {
+  "acc_0_24": 0.058349609375,
+  "acc_24_48": 0.0126953125,
+  "acc_48_96": 0.0079345703125,
+  "acc_96_256": 0.0077270506881177425
+ },
+ "curve": [
+  {
+   "step": 500,
+   "loss": 4.1071248054504395,
+   "acc_train_len": 0.0506998710334301,
+   "supervised_len": 7
+  },
+  {
+   "step": 1000,
+   "loss": 4.309624671936035,
+   "acc_train_len": 0.0506998710334301,
+   "supervised_len": 10
+  },
+  {
+   "step": 1500,
+   "loss": 4.40577507019043,
+   "acc_train_len": 0.0491536445915699,
+   "supervised_len": 13
+  },
+  {
+   "step": 2000,
+   "loss": 4.070237159729004,
+   "acc_train_len": 0.0533040352165699,
+   "supervised_len": 16
+  },
+  {
+   "step": 2500,
+   "loss": 3.916856527328491,
+   "acc_train_len": 0.05712890625,
+   "supervised_len": 19
+  },
+  {
+   "step": 3000,
+   "loss": 3.934457302093506,
+   "acc_train_len": 0.0599772147834301,
+   "supervised_len": 22
+  },
+  {
+   "step": 3500,
+   "loss": 3.935063123703003,
+   "acc_train_len": 0.0580240897834301,
+   "supervised_len": 24
+  },
+  {
+   "step": 4000,
+   "loss": 3.9242260456085205,
+   "acc_train_len": 0.0594889335334301,
+   "supervised_len": 24
+  },
+  {
+   "step": 4500,
+   "loss": 3.9228105545043945,
+   "acc_train_len": 0.0592447929084301,
+   "supervised_len": 24
+  },
+  {
+   "step": 5000,
+   "loss": 3.9257450103759766,
+   "acc_train_len": 0.05908203125,
+   "supervised_len": 24
+  },
+  {
+   "step": 5500,
+   "loss": 3.9265193939208984,
+   "acc_train_len": 0.059326171875,
+   "supervised_len": 24
+  },
+  {
+   "step": 6000,
+   "loss": 3.9233462810516357,
+   "acc_train_len": 0.055419921875,
+   "supervised_len": 24
+  },
+  {
+   "step": 6500,
+   "loss": 3.9199399948120117,
+   "acc_train_len": 0.0576171875,
+   "supervised_len": 24
+  },
+  {
+   "step": 7000,
+   "loss": 3.9226276874542236,
+   "acc_train_len": 0.0602213554084301,
+   "supervised_len": 24
+  },
+  {
+   "step": 7500,
+   "loss": 3.9217112064361572,
+   "acc_train_len": 0.058349609375,
+   "supervised_len": 24
+  },
+  {
+   "step": 8000,
+   "loss": 3.924633026123047,
+   "acc_train_len": 0.057861328125,
+   "supervised_len": 24
+  }
+ ]
+}
