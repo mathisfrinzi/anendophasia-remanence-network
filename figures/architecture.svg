@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 40 820 345" font-family="Helvetica, Arial, sans-serif" font-size="13">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52514e"/></marker>
+    <marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2a78d6"/></marker>
+    <pattern id="g" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="#eaf2fc"/><path d="M8 0H0V8" fill="none" stroke="#b9d3f3" stroke-width="1"/></pattern>
+  </defs>
+  <rect y="40" width="820" height="345" fill="#ffffff"/>
+  <text x="20" y="72" font-size="16" font-weight="bold" fill="#0b0b0b">Remanence Network : une mémoire faite d'images, mise à jour à chaque token</text>
+
+  <!-- token -->
+  <rect x="20" y="150" width="110" height="56" rx="8" fill="#f3f2ee" stroke="#c3c2b7"/>
+  <text x="75" y="174" text-anchor="middle" fill="#0b0b0b" font-weight="bold">token t</text>
+  <text x="75" y="193" text-anchor="middle" fill="#52514e" font-size="11">plongement → motif</text>
+  <line x1="130" y1="178" x2="186" y2="178" stroke="#52514e" stroke-width="2" marker-end="url(#a)"/>
+  <text x="158" y="168" text-anchor="middle" fill="#52514e" font-size="11">+ dépôt</text>
+
+  <!-- Image 1 -->
+  <rect x="190" y="120" width="116" height="116" rx="6" fill="url(#g)" stroke="#2a78d6" stroke-width="2"/>
+  <text x="248" y="110" text-anchor="middle" fill="#0b0b0b"><tspan font-weight="bold">Image 1</tspan> <tspan fill="#52514e" font-size="11">4×8×8</tspan></text>
+
+  <!-- T1 -->
+  <line x1="306" y1="160" x2="380" y2="160" stroke="#52514e" stroke-width="2" marker-end="url(#a)"/>
+  <rect x="384" y="130" width="120" height="60" rx="8" fill="#ffffff" stroke="#52514e" stroke-width="1.5"/>
+  <text x="444" y="156" text-anchor="middle" font-weight="bold" fill="#0b0b0b">T1</text>
+  <text x="444" y="175" text-anchor="middle" fill="#52514e" font-size="11">transformer sur patchs</text>
+  <line x1="504" y1="160" x2="576" y2="160" stroke="#52514e" stroke-width="2" marker-end="url(#a)"/>
+  <text x="540" y="150" text-anchor="middle" fill="#52514e" font-size="11">écriture</text>
+  <text x="540" y="178" text-anchor="middle" fill="#52514e" font-size="10">(porte d'oubli)</text>
+
+  <!-- Image 2 -->
+  <rect x="580" y="120" width="116" height="116" rx="6" fill="url(#g)" stroke="#2a78d6" stroke-width="2"/>
+  <text x="638" y="110" text-anchor="middle" fill="#0b0b0b"><tspan font-weight="bold">Image 2</tspan> <tspan fill="#52514e" font-size="11">4×8×8</tspan></text>
+
+  <!-- readout -->
+  <line x1="696" y1="178" x2="724" y2="178" stroke="#52514e" stroke-width="2" marker-end="url(#a)"/>
+  <rect x="728" y="150" width="76" height="56" rx="8" fill="#f3f2ee" stroke="#c3c2b7"/>
+  <text x="766" y="174" text-anchor="middle" font-weight="bold" fill="#0b0b0b">lecture</text>
+  <text x="766" y="193" text-anchor="middle" fill="#52514e" font-size="11">→ token t+1</text>
+
+  <!-- T2 feedback -->
+  <path d="M638,236 L638,300 L504,300" fill="none" stroke="#2a78d6" stroke-width="2"/>
+  <rect x="384" y="272" width="120" height="56" rx="8" fill="#ffffff" stroke="#2a78d6" stroke-width="1.5"/>
+  <text x="444" y="296" text-anchor="middle" font-weight="bold" fill="#0b0b0b">T2</text>
+  <text x="444" y="315" text-anchor="middle" fill="#52514e" font-size="11">rétroaction</text>
+  <path d="M384,300 L248,300 L248,240" fill="none" stroke="#2a78d6" stroke-width="2" marker-end="url(#b)"/>
+  <text x="316" y="292" text-anchor="middle" fill="#2a78d6" font-size="11">réécrit Image 1 (porte)</text>
+
+  <!-- persistence -->
+  <text x="20" y="352" fill="#52514e" font-size="12">Les deux images <tspan font-weight="bold" fill="#2a78d6">persistent</tspan> d'un token au suivant : c'est la seule mémoire du modèle (pas d'attention sur le passé, pas d'historique).</text>
+  <text x="20" y="371" fill="#52514e" font-size="12">Une étape par token : dépôt → T1 → lecture → T2. Variantes testées : images plus grandes, plusieurs passes par token, graphes d'images.</text>
+</svg>
