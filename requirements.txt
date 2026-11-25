@@ -1,0 +1,9 @@
+# Colab : torch, numpy, matplotlib et datasets sont préinstallés.
+torch
+numpy
+matplotlib
+pandas        # Silverbox
+datasets      # TinyStories, Wikitext-2, PG-19
+tokenizers    # BPE
+timm          # amendement 39 (ViT pré-entraîné) seulement
+pytest
