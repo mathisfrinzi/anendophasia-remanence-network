@@ -1,8 +1,10 @@
+[English version](RESULTS.en.md)
+
 # Résultats détaillés
 
 Tous les chiffres viennent de `results/*.json`. « A12 » renvoie à l'amendement 12 de [PROTOCOLE.md](preenregistrements/PROTOCOLE.md), où se trouvent le montage complet, les critères et pronostics écrits avant la mesure, et les résultats bruts. Précision en %, bpc = bits par caractère (plus bas = mieux), « graine » = initialisation aléatoire. Le hasard est indiqué entre parenthèses.
 
-**Le modèle.** Deux images de 4×8×8 (256 nombres chacune) forment toute la mémoire ; il n'y a ni attention sur le passé ni position. Pour chaque token : (1) le token se dépose sur l'image 1 ; (2) **T1**, un petit transformer sur les 16 patchs de l'image 1, écrit dans l'image 2 à travers une porte d'oubli apprise ; (3) une tête lit l'image 2 et prédit ; (4) **T2** lit l'image 2 et réécrit l'image 1 (même porte). Code : [`src/s4_loop.py`](../src/s4_loop.py) (`LoopLM`), version rapide équivalente [`src/s8_rapide.py`](../src/s8_rapide.py).
+Le modèle. Deux images de 4×8×8 (256 nombres chacune) forment toute la mémoire ; il n'y a ni attention sur le passé ni position. Pour chaque token : (1) le token se dépose sur l'image 1 ; (2) T1, un petit transformer sur les 16 patchs de l'image 1, écrit dans l'image 2 à travers une porte d'oubli apprise ; (3) une tête lit l'image 2 et prédit ; (4) T2 lit l'image 2 et réécrit l'image 1 (même porte). Code : [`src/s4_loop.py`](../src/s4_loop.py) (`LoopLM`), version rapide équivalente [`src/s8_rapide.py`](../src/s8_rapide.py).
 
 ## Sommaire
 
@@ -21,7 +23,7 @@ Tous les chiffres viennent de `results/*.json`. « A12 » renvoie à l'amendemen
 
 ## 1. État : la rémanence suit-elle un état ?
 
-**Verdict : oui, solide sur S3 (5 graines sur 5, contrôles à capacité égale).**
+Verdict : oui, solide sur S3 (5 graines sur 5, contrôles à capacité égale).
 
 S3 : on lit une suite de permutations de 3 éléments et on doit donner leur composition à chaque pas (6 états, hasard 16,7 %). Entraînement sur des suites de ≤ 12, test jusqu'à 96. CPU, 2 000 pas, d = 64 (A15).
 
@@ -32,15 +34,15 @@ S3 : on lit une suite de permutations de 3 éléments et on doit donner leur com
 | témoin : T1 élargi, sans T2 | 248 k | 59-66 | 16-20 | 16-17 | 16-17 |
 | sans T2 | 148 k | 58-66 | 17-18 | 16-17 | 16-17 |
 
-- **C'est le retour T2 → image 1 qui fait l'état** : à paramètres égaux, les deux témoins restent au hasard hors entraînement.
+- C'est le retour T2 → image 1 qui fait l'état : à paramètres égaux, les deux témoins restent au hasard hors entraînement.
 - Ablations (A16, 1 graine) : sans porte d'oubli → 17-22 % ; lecture sur l'image 1 au lieu de l'image 2 → 17 % ; une seule couche par transformer → toujours 100 %.
 - Sur GPU (entraînement sur 24, test jusqu'à 256, A12) : 2 graines sur 3 à 100 % jusqu'à 256 ; T_rope 17 % au-delà de 48.
-- **S4** (24 états, hasard 4,2 %, 15 000 pas, A27b) : précision à n = 24 / 192 : rémanence 100 / 100, 70 / 52, 100 / 100 (3 graines) ; T_rope 40 / 8,5 (1 graine). À 4 000 pas, aucun modèle ne décolle.
-- **S5** (120 états, A10, A31) : personne n'apprend en 8 000 pas, GRU compris (≈ 9-13 % dans la longueur d'entraînement, hasard au-delà).
+- S4 (24 états, hasard 4,2 %, 15 000 pas, A27b) : précision à n = 24 / 192 : rémanence 100 / 100, 70 / 52, 100 / 100 (3 graines) ; T_rope 40 / 8,5 (1 graine). À 4 000 pas, aucun modèle ne décolle.
+- S5 (120 états, A10, A31) : personne n'apprend en 8 000 pas, GRU compris (≈ 9-13 % dans la longueur d'entraînement, hasard au-delà).
 
 ## 2. Mémoire : retient-elle une valeur ?
 
-**Verdict : oui, solide (3 graines sur 3).**
+Verdict : oui, solide (3 graines sur 3).
 
 S3M : une valeur parmi 8 est donnée au début, puis n éléments de S3, puis on demande la valeur (hasard 12,5 %). Entraînement n ≤ 24, 3 000 pas (A17).
 
@@ -57,7 +59,7 @@ S3M : une valeur parmi 8 est donnée au début, puis n éléments de S3, puis on
 
 ## 3. Contre les réseaux récurrents
 
-**Verdict : la rémanence ne fait pas mieux qu'un GRU ou un LSTM (A30, A28, 3 graines).**
+Verdict : la rémanence ne fait pas mieux qu'un GRU ou un LSTM (A30, A28, 3 graines).
 
 | tâche | GRU | LSTM | rémanence |
 |---|---|---|---|
@@ -67,14 +69,14 @@ S3M : une valeur parmi 8 est donnée au début, puis n éléments de S3, puis on
 | liste circulaire, 4 et 5 sauts (jamais vus) | 1-12 | 1-9 | 0-13 |
 | Silverbox, erreur de test (mV) | **9,56** ± 0,02 | 9,60 ± 0,03 | 10,82 ± 0,56 |
 
-- **Silverbox** (A28) : identification d'un circuit électronique non linéaire. T_rope 15,29 mV, régression linéaire 14,03, rémanence sans T2 41,96. Sans T2, l'erreur est presque 4 fois plus grande : le retour compte aussi ici. Aucun réseau ne fait mieux que le linéaire dans la plage d'entraînement.
-- **Liste circulaire** (A23) : suivre h pointeurs dans une liste de 6. La rémanence réussit 3 sauts sur 3 graines ; T_rope plafonne à 21-26 % à 3 sauts. Les « pauses de réflexion » avant la réponse n'aident pas. Entraînée jusqu'à 5 sauts (A32), la rémanence n'y arrive que pour 1 graine sur 3 ; le GRU y arrive (1 graine testée).
+- Silverbox (A28) : identification d'un circuit électronique non linéaire. T_rope 15,29 mV, régression linéaire 14,03, rémanence sans T2 41,96. Sans T2, l'erreur est presque 4 fois plus grande : le retour compte aussi ici. Aucun réseau ne fait mieux que le linéaire dans la plage d'entraînement.
+- Liste circulaire (A23) : suivre h pointeurs dans une liste de 6. La rémanence réussit 3 sauts sur 3 graines ; T_rope plafonne à 21-26 % à 3 sauts. Les « pauses de réflexion » avant la réponse n'aident pas. Entraînée jusqu'à 5 sauts (A32), la rémanence n'y arrive que pour 1 graine sur 3 ; le GRU y arrive (1 graine testée).
 
 ## 4. Langage
 
-**Verdict : la rémanence est au niveau d'un transformer de même taille dans la longueur d'entraînement, plus stable au-delà, derrière un GRU. Une graine par configuration.**
+Verdict : la rémanence est au niveau d'un transformer de même taille dans la longueur d'entraînement, plus stable au-delà, derrière un GRU. Une graine par configuration.
 
-**Six corpus sur CPU** (A20, A22 ; fenêtres de 64, 2 000 pas, ≈ 1 M de paramètres ; bpc 0-64 / 128-256) :
+Six corpus sur CPU (A20, A22 ; fenêtres de 64, 2 000 pas, ≈ 1 M de paramètres ; bpc 0-64 / 128-256) :
 
 | corpus | T_rope | rémanence |
 |---|---|---|
@@ -87,7 +89,7 @@ S3M : une valeur parmi 8 est donnée au début, puis n éléments de S3, puis on
 
 Dans la fenêtre d'entraînement, la rémanence est à −1 / +4 % de T_rope ; au-delà, T_rope se dégrade de 6 à 14 % sur 4 corpus et la rémanence le dépasse. Le contrôle qui entraînerait T_rope sur des fenêtres plus longues (A37) n'a pas pu être interprété (budgets trop courts).
 
-**TinyStories et Wikitext-2 sur GPU** (A40 ; 2 000 pas, fenêtres de 128 ; bpc 0-128 / 128-512) :
+TinyStories et Wikitext-2 sur GPU (A40 ; 2 000 pas, fenêtres de 128 ; bpc 0-128 / 128-512) :
 
 | modèle | paramètres | TinyStories | Wikitext-2 | durée (Wikitext-2) |
 |---|---|---|---|---|
@@ -104,10 +106,10 @@ Dans la fenêtre d'entraînement, la rémanence est à −1 / +4 % de T_rope ; a
 
 ## 5. Taille d'image et paramètres égaux
 
-**Verdict : grossir l'image n'aide pas de façon reproductible ; le transformer profite plus de sa taille.**
+Verdict : grossir l'image n'aide pas de façon reproductible ; le transformer profite plus de sa taille.
 
-- **A40 (GPU)** : passer de 4×8×8 à 4×16×16 améliore la rémanence de 5,4 % sur Wikitext-2, mais sur TinyStories le 4×16×16 reste au plateau (perte 6,8). Le GRU gagne 7 à 15 % en passant de 256 à 1 024.
-- **A44 (CPU, Wikitext-2, fenêtres de 64, 1 500 pas)** :
+- A40 (GPU) : passer de 4×8×8 à 4×16×16 améliore la rémanence de 5,4 % sur Wikitext-2, mais sur TinyStories le 4×16×16 reste au plateau (perte 6,8). Le GRU gagne 7 à 15 % en passant de 256 à 1 024.
+- A44 (CPU, Wikitext-2, fenêtres de 64, 1 500 pas) :
 
 | modèle | paramètres | bpc 0-64 |
 |---|---|---|
@@ -119,8 +121,8 @@ Dans la fenêtre d'entraînement, la rémanence est à −1 / +4 % de T_rope ; a
 | rémanence 4×16×16 | 1,11 M | 2,146 |
 | rémanence 8×16×16 | 1,32 M | 2,995 (n'a pas démarré) |
 
-- **Plus long** (6 000 pas) : l'écart rémanence 4×8×8 / T_rope 96×2 passe de 7,0 à 4,0 % (1,815 contre 1,746) ; au-delà de 64 tokens, égalité (1,809 contre 1,808).
-- **Learning rate** (5e-4, 1e-3, 2e-3) : les deux modèles préfèrent 2e-3, l'écart reste de 7 à 8,5 %. Le lr unique de 1e-3 n'explique pas le retard.
+- Plus long (6 000 pas) : l'écart rémanence 4×8×8 / T_rope 96×2 passe de 7,0 à 4,0 % (1,815 contre 1,746) ; au-delà de 64 tokens, égalité (1,809 contre 1,808).
+- Learning rate (5e-4, 1e-3, 2e-3) : les deux modèles préfèrent 2e-3, l'écart reste de 7 à 8,5 %. Le lr unique de 1e-3 n'explique pas le retard.
 
 ## 6. Variantes de l'architecture
 
@@ -137,16 +139,16 @@ Aucune ne bat la rémanence de base.
 
 ## 7. Vitesse d'apprentissage, graines, coût
 
-- **Plateau puis chute** : toutes les rémanences restent d'abord au niveau du hasard, puis décrochent brutalement. Le GRU décroche 2 à 4 fois plus tôt (S3M : ≤ 500 pas contre 750 à 1 500 ; listes : 1 500 pas contre 2 500 à 3 500). Sur S4, la rémanence décroche à 6 000 et 13 000 pas, et une graine jamais. Plusieurs résultats nuls (S5, réseau 2-3-1, passes par token) sont peut-être des plateaux non franchis faute de budget.
-- **Graines** : la rémanence échoue sur 1 graine sur 3 dans plusieurs tâches (S3 GPU, S4, listes à 5 sauts) ; les tailles d'image 4×16×16 et 8×16×16 ne démarrent pas sur certains jeux. Les résultats à une graine sont à lire avec cette variance en tête.
-- **Coût** : 8× T_rope sur CPU (Wikitext-2), 26× sur GPU Intel (TinyStories), 49 à 224× sur GPU Intel (A40, selon le corpus et la taille) ; 12 à 50× un GRU. La boucle est limitée par le lancement de nombreuses petites opérations, pas par le calcul : un GPU ne l'accélère presque pas.
+- Plateau puis chute : toutes les rémanences restent d'abord au niveau du hasard, puis décrochent brutalement. Le GRU décroche 2 à 4 fois plus tôt (S3M : ≤ 500 pas contre 750 à 1 500 ; listes : 1 500 pas contre 2 500 à 3 500). Sur S4, la rémanence décroche à 6 000 et 13 000 pas, et une graine jamais. Plusieurs résultats nuls (S5, réseau 2-3-1, passes par token) sont peut-être des plateaux non franchis faute de budget.
+- Graines : la rémanence échoue sur 1 graine sur 3 dans plusieurs tâches (S3 GPU, S4, listes à 5 sauts) ; les tailles d'image 4×16×16 et 8×16×16 ne démarrent pas sur certains jeux. Les résultats à une graine sont à lire avec cette variance en tête.
+- Coût : 8× T_rope sur CPU (Wikitext-2), 26× sur GPU Intel (TinyStories), 49 à 224× sur GPU Intel (A40, selon le corpus et la taille) ; 12 à 50× un GRU. La boucle est limitée par le lancement de nombreuses petites opérations, pas par le calcul : un GPU ne l'accélère presque pas.
 
 ## 8. Étapes préliminaires : texte → image, vidéo
 
-- **Texte dans une image** (A1-A3) : une image de 192 nombres, écrite caractère par caractère comme une vidéo continue, se relit à 99,9 % pour 16 caractères, 97,9 % pour 32 ; 53 % à 64 (87,9 % en 30 000 pas, alors que 32 caractères passent à 99,6 %).
-- **Vidéo d'images lue par un transformer sans position** (A5-A7, TinyStories, 1 graine) : au niveau de T_rope dans la longueur d'entraînement (0,645 contre 0,625 bpc), bien meilleure loin au-delà (0,846 contre 1,164 à 512-1 024 tokens).
-- **La vidéo seule ne suffit pas à suivre un état** (A10, A11) : S3 appris par 1 graine sur 3. D'où l'ajout du retour T2 : la rémanence.
-- **Images lisibles ?** (A14) Non : pas de structure visible, la continuité imposée n'apporte ni robustesse au bruit ni compacité.
+- Texte dans une image (A1-A3) : une image de 192 nombres, écrite caractère par caractère comme une vidéo continue, se relit à 99,9 % pour 16 caractères, 97,9 % pour 32 ; 53 % à 64 (87,9 % en 30 000 pas, alors que 32 caractères passent à 99,6 %).
+- Vidéo d'images lue par un transformer sans position (A5-A7, TinyStories, 1 graine) : au niveau de T_rope dans la longueur d'entraînement (0,645 contre 0,625 bpc), bien meilleure loin au-delà (0,846 contre 1,164 à 512-1 024 tokens).
+- La vidéo seule ne suffit pas à suivre un état (A10, A11) : S3 appris par 1 graine sur 3. D'où l'ajout du retour T2 : la rémanence.
+- Images lisibles ? (A14) Non : pas de structure visible, la continuité imposée n'apporte ni robustesse au bruit ni compacité.
 
 ## 9. Corrections faites en cours de route
 
@@ -158,8 +160,8 @@ Aucune ne bat la rémanence de base.
 
 ## 10. Ce qui reste ouvert
 
-1. **Échelle** : tout est ≤ 8 M de paramètres, ≤ 15 000 pas. Les LoopLM récents (Ouro, Huginn) ne marchent qu'à des milliards de tokens, et bouclent en profondeur, pas en mémoire.
-2. **Démarrage** : pourquoi la rémanence reste longtemps au plateau, et pourquoi les grandes images ne démarrent pas. Une stabilisation de type Parcae (contraintes sur l'injection de l'état) n'a pas été essayée.
-3. **Mémoire très longue** (PG-19, A41) et **hybride** transformer + rémanence (A42) : préparés, pas lancés.
-4. **Contrôle du transformer** entraîné sur des fenêtres longues : non fait proprement (A37 non interprétable).
-5. **Ce que contiennent les images** sur du langage (sondes, A43) : préparé, pas lancé.
+1. Échelle : tout est ≤ 8 M de paramètres, ≤ 15 000 pas. Les LoopLM récents (Ouro, Huginn) ne marchent qu'à des milliards de tokens, et bouclent en profondeur, pas en mémoire.
+2. Démarrage : pourquoi la rémanence reste longtemps au plateau, et pourquoi les grandes images ne démarrent pas. Une stabilisation de type Parcae (contraintes sur l'injection de l'état) n'a pas été essayée.
+3. Mémoire très longue (PG-19, A41) et hybride transformer + rémanence (A42) : préparés, pas lancés.
+4. Contrôle du transformer entraîné sur des fenêtres longues : non fait proprement (A37 non interprétable).
+5. Ce que contiennent les images sur du langage (sondes, A43) : préparé, pas lancé.

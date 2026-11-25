@@ -1,4 +1,4 @@
-[← Résumé](../../README.md) · [Résultats](../RESULTATS.md)
+[← Résumé](../../README.md) · [Résultats](../RESULTATS.md) · [English version](README.en.md)
 
 # Pré-enregistrements
 
